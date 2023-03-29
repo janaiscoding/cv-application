@@ -1,16 +1,18 @@
-import './App.css';
-import React, { Component } from "react";
+import React from "react";
 
-class App extends Component{
-  constructor(){
+class App extends React.Component {
+  constructor() {
     super();
-
     this.state = {
-      
-    }
+      answer: "Yes",
+    };
   }
-  render(){
-    return <div> Hello World!</div>
+  render() {
+    return (
+      <div>
+        <h1>Is state important to know? {this.state.answer}</h1>
+      </div>
+    );
   }
 }
 
