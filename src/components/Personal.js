@@ -1,5 +1,7 @@
 import React from "react";
 import Input from "./Input";
+import "../styles/personal.css";
+import Title from "./Title";
 
 class Personal extends React.Component {
   constructor() {
@@ -27,14 +29,12 @@ class Personal extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <Input title="firstName" type="text" placeholder="First Name" />
-          <Input title="lastName" type="text" placeholder="Last Name" />
-          <Input title="email" type="text" placeholder="Email" />
-          <Input title="phoneNumber" type="number" placeholder="Phone number" />
-          <button>Submit Form</button>
-        </form>
+      <div className="personal-info">
+        <Title sectionTitle="Personal Information" />
+        <Input title="firstName" type="text" placeholder="First Name" />
+        <Input title="lastName" type="text" placeholder="Last Name" />
+        <Input title="email" type="text" placeholder="Email" />
+        <Input title="phoneNumber" type="number" placeholder="Phone number" />
       </div>
     );
   }
