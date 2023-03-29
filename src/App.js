@@ -1,16 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
+    this.isLoggedIn = false;
     this.state = {
-      answer: "Yes",
+      name: "Jana",
+      age: 25,
     };
   }
   render() {
     return (
       <div>
-        <h1>Is state important to know? {this.state.answer}</h1>
+        <h1>{this.state.name}</h1>
+        <h3>{this.state.age} years old</h3>
+        <h1>You are currently logged {this.isLoggedIn ? "in" : "out"}</h1>
       </div>
     );
   }
