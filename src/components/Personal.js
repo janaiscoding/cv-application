@@ -11,11 +11,13 @@ class Personal extends React.Component {
       lastName: "",
       email: "",
       phoneNumber: "",
+      showOutput: false,
     };
     this.handleFirst = this.handleFirst.bind(this);
     this.handleLast = this.handleLast.bind(this);
     this.handleEmail = this.handleEmail.bind(this);
     this.handlePhone = this.handlePhone.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleFirst = (e) => {
     this.setState({
@@ -40,13 +42,16 @@ class Personal extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.setState({
+      showOutput: true,
+    });
     console.log(this.state);
   };
 
   render() {
     return (
       <div className="personal-info">
-        <Title sectionTitle="Personal Information" />
+        <Title name="Personal Information" />
         <form onSubmit={this.handleSubmit}>
           <Input onChange={this.handleFirst} plHldr="John" />
           <Input onChange={this.handleLast} plHldr="Doe" />

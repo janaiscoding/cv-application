@@ -1,15 +1,11 @@
 import React from "react";
+import Title from "./Title";
 
 class Output extends React.Component {
-  render(props) {
-    const { myInfo } = props;
+  render() {
     return (
-      <ul>
-        {myInfo.map((info) => {
-          return <li>{info.text}</li>;
-        })}
-      </ul>
-    );
+        <Title name="My Cv" />
+    )
   }
 }
 
