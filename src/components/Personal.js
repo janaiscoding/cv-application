@@ -12,29 +12,74 @@ class Personal extends React.Component {
       email: "",
       phoneNumber: "",
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFirstName = this.handleFirstName.bind(this);
+    this.handleLastName = this.handleLastName.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
+    this.handlePhoneNumber = this.handlePhoneNumber.bind(this);
   }
-
-  handleChange = (e) => {
+  handleFirstName = (e) => {
     this.setState({
       firstName: e.target.value,
+    });
+  };
+  handleLastName = (e) => {
+    this.setState({
+      lastName: e.target.value,
+    });
+  };
+  handleEmail = (e) => {
+    this.setState({
       email: e.target.value,
+    });
+  };
+  handlePhoneNumber = (e) => {
+    this.setState({
       phoneNumber: e.target.value,
     });
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
+    this.setState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+    });
+    console.log(this.state);
   };
 
   render() {
     return (
       <div className="personal-info">
         <Title sectionTitle="Personal Information" />
-        <Input title="firstName" type="text" placeholder="First Name" />
-        <Input title="lastName" type="text" placeholder="Last Name" />
-        <Input title="email" type="text" placeholder="Email" />
-        <Input title="phoneNumber" type="number" placeholder="Phone number" />
+        <form onSubmit={this.handleSubmit}>
+          <Input
+            onChangeEvent={this.handleFirstName}
+            title="firstName"
+            type="text"
+            placeholder="First Name"
+          />
+          <Input
+            onChangeEvent={this.handleLastName}
+            title="lastName"
+            type="text"
+            placeholder="Last Name"
+          />
+          <Input
+            onChangeEvent={this.handleEmail}
+            title="email"
+            type="text"
+            placeholder="Email"
+          />
+          <Input
+            onChangeEvent={this.handlePhoneNumber}
+            title="phoneNumber"
+            type="number"
+            placeholder="Phone number"
+          />
+          <button type="submit">Add</button>
+        </form>
       </div>
     );
   }
