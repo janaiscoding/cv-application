@@ -1,4 +1,10 @@
 .personal-info {
-  background-color:antiquewhite;
+  background-color: antiquewhite;
   padding: 20px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

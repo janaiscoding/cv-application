@@ -40,12 +40,6 @@ class Personal extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phoneNumber: "",
-    });
     console.log(this.state);
   };
 
@@ -56,25 +50,12 @@ class Personal extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <Input
             onChangeEvent={this.handleFirstName}
-            title="firstName"
-            type="text"
             placeholder="First Name"
           />
-          <Input
-            onChangeEvent={this.handleLastName}
-            title="lastName"
-            type="text"
-            placeholder="Last Name"
-          />
-          <Input
-            onChangeEvent={this.handleEmail}
-            title="email"
-            type="text"
-            placeholder="Email"
-          />
+          <Input onChangeEvent={this.handleLastName} placeholder="Last Name" />
+          <Input onChangeEvent={this.handleEmail} placeholder="Email" />
           <Input
             onChangeEvent={this.handlePhoneNumber}
-            title="phoneNumber"
             type="number"
             placeholder="Phone number"
           />
