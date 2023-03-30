@@ -12,17 +12,17 @@ class Personal extends React.Component {
       email: "",
       phoneNumber: "",
     };
-    this.handleFirstName = this.handleFirstName.bind(this);
-    this.handleLastName = this.handleLastName.bind(this);
+    this.handleFirst = this.handleFirst.bind(this);
+    this.handleLast = this.handleLast.bind(this);
     this.handleEmail = this.handleEmail.bind(this);
-    this.handlePhoneNumber = this.handlePhoneNumber.bind(this);
+    this.handlePhone = this.handlePhone.bind(this);
   }
-  handleFirstName = (e) => {
+  handleFirst = (e) => {
     this.setState({
       firstName: e.target.value,
     });
   };
-  handleLastName = (e) => {
+  handleLast = (e) => {
     this.setState({
       lastName: e.target.value,
     });
@@ -32,7 +32,7 @@ class Personal extends React.Component {
       email: e.target.value,
     });
   };
-  handlePhoneNumber = (e) => {
+  handlePhone = (e) => {
     this.setState({
       phoneNumber: e.target.value,
     });
@@ -48,17 +48,10 @@ class Personal extends React.Component {
       <div className="personal-info">
         <Title sectionTitle="Personal Information" />
         <form onSubmit={this.handleSubmit}>
-          <Input
-            onChangeEvent={this.handleFirstName}
-            placeholder="First Name"
-          />
-          <Input onChangeEvent={this.handleLastName} placeholder="Last Name" />
-          <Input onChangeEvent={this.handleEmail} placeholder="Email" />
-          <Input
-            onChangeEvent={this.handlePhoneNumber}
-            type="number"
-            placeholder="Phone number"
-          />
+          <Input onChange={this.handleFirst} plHldr="John" />
+          <Input onChange={this.handleLast} plHldr="Doe" />
+          <Input onChange={this.handleEmail} plHldr="a@b.c" />
+          <Input onChange={this.handlePhone} type="number" plHldr="Phone" />
           <button type="submit">Add</button>
         </form>
       </div>
