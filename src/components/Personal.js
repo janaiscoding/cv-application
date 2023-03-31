@@ -47,18 +47,14 @@ class Personal extends React.Component {
     });
     console.log(this.state);
   };
-
   render() {
     return (
       <div className="personal-info">
         <Title name="Personal Information" />
-        <form onSubmit={this.handleSubmit}>
           <Input onChange={this.handleFirst} plHldr="John" />
           <Input onChange={this.handleLast} plHldr="Doe" />
           <Input onChange={this.handleEmail} plHldr="a@b.c" />
           <Input onChange={this.handlePhone} type="number" plHldr="Phone" />
-          <button type="submit">Add</button>
-        </form>
       </div>
     );
   }
