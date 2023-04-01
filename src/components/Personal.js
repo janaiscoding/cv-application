@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "./Input";
-import "../styles/personal.css";
+import "../utils/styles.css";
 import Title from "./Title";
 
 class Personal extends React.Component {
