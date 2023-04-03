@@ -1,61 +1,98 @@
 import React from "react";
-import Input from "./Input";
 import "../utils/styles.css";
-import Title from "./Title";
+import Output from "./Output";
 
 class Personal extends React.Component {
   constructor() {
     super();
     this.state = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phoneNumber: "",
-      showOutput: false,
+      personalInfo: {
+        firstName: "John",
+        lastName: "Doe",
+        email: "john.creates@gmail.com",
+        phoneNumber: "0744 286 175",
+      },
     };
-    this.handleFirst = this.handleFirst.bind(this);
-    this.handleLast = this.handleLast.bind(this);
-    this.handleEmail = this.handleEmail.bind(this);
-    this.handlePhone = this.handlePhone.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
+    this.handleChangeLastName = this.handleChangeLastName.bind(this);
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChangePhone = this.handleChangePhone.bind(this);
   }
-  handleFirst = (e) => {
+  handleChangeFirstName = (e) => {
     this.setState({
-      firstName: e.target.value,
+      personalInfo: {
+        ...this.state.personalInfo,
+        firstName: e.target.value,
+      },
     });
   };
-  handleLast = (e) => {
+  handleChangeLastName = (e) => {
     this.setState({
-      lastName: e.target.value,
+      personalInfo: {
+        ...this.state.personalInfo,
+        lastName: e.target.value,
+      },
     });
   };
-  handleEmail = (e) => {
+  handleChangeEmail = (e) => {
     this.setState({
-      email: e.target.value,
+      personalInfo: {
+        ...this.state.personalInfo,
+        email: e.target.value,
+      },
     });
   };
-  handlePhone = (e) => {
+  handleChangePhone = (e) => {
     this.setState({
-      phoneNumber: e.target.value,
+      personalInfo: {
+        ...this.state.personalInfo,
+        phoneNumber: e.target.value,
+      },
     });
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.setState({
-      showOutput: true,
-    });
-    console.log(this.state);
   };
   render() {
     return (
-      <div className="personal-info">
-        <Title name="Personal Information" />
-          <Input onChange={this.handleFirst} plHldr="John" />
-          <Input onChange={this.handleLast} plHldr="Doe" />
-          <Input onChange={this.handleEmail} plHldr="a@b.c" />
-          <Input onChange={this.handlePhone} type="number" plHldr="Phone" />
-      </div>
+      <>
+        <fieldset className="pInfo">
+          <div className="pInfoFirst">
+            <label htmlFor="firstName">First Name </label>
+            <input
+              value={this.state.personalInfo.firstName}
+              onChange={this.handleChangeFirstName}
+              placeholder="John"
+              required={true}
+            />
+          </div>
+          <div className="pInfoLast">
+            <label htmlFor="lastName">Last Name </label>
+            <input
+              value={this.state.personalInfo.lastName}
+              onChange={this.handleChangeLastName}
+              placeholder="Doe"
+              required={true}
+            />
+          </div>
+          <div className="pInfoEmail">
+            <label htmlFor="email">Email </label>
+            <input
+              value={this.state.personalInfo.email  }
+              onChange={this.handleChangeEmail}
+              placeholder="meow.meow@cats.meow"
+              required={true}
+            />
+          </div>
+          <div className="pInfoPhone">
+            <label htmlFor="phone">Phone Number </label>
+            <input
+              onChange={this.handleChangePhone}
+              type="number"
+              placeholder="phone nr#"
+              required={true}
+            />
+          </div>
+        </fieldset>
+        <Output personalInfo={this.state.personalInfo} />
+      </>
     );
   }
 }
