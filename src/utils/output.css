@@ -1,6 +1,14 @@
-.output-personal-info{
+.personal-info-container,
+.work-info-container{
     border: 1px solid black;
     margin-top: 10px;
     background-color: bisque;
     padding-left: 20px;
+}
+
+.work-singular-item{
+    border: 1px solid black;
+}
+.work-container-items{
+    background-color: aquamarine;
 }

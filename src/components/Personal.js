@@ -2,6 +2,7 @@ import React from "react";
 import "../utils/styles.css";
 import Experience from "./Experience";
 
+
 class Personal extends React.Component {
   constructor(props) {
     super(props);
@@ -26,8 +27,8 @@ class Personal extends React.Component {
   };
   render() {
     return (
-      <>
-        <fieldset className="pInfo">
+      <div className="main-app">
+        <fieldset className="personal-info-fields">
           <legend>This is personal info legend</legend>
           <div className="pInfoFirst">
             <label htmlFor="firstName">First Name </label>
@@ -71,7 +72,7 @@ class Personal extends React.Component {
           </div>
         </fieldset>
         <Experience personalInfo={this.state.personalInfo} />
-      </>
+      </div>
     );
   }
 }
