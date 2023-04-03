@@ -1,9 +1,13 @@
 import React from "react";
+import "../utils/experience.css";
+import Output from "./Output";
 
 class Experience extends React.Component {
   constructor(props) {
+    const { personalInfo } = props;
     super(props);
     this.state = {
+      personalInfo,
       workFields: [
         {
           companyName: "Awesome Company",
@@ -13,12 +17,12 @@ class Experience extends React.Component {
           endingYearJob: "2022",
         },
         {
-            companyName: "Awesome Company2",
-            position: "Junior Developer2",
-            mainTasks: "Had to be extra nice2",
-            startingYearJob: "2022",
-            endingYearJob: "2025",
-          },
+          companyName: "Awesome Company2",
+          position: "Junior Developer2",
+          mainTasks: "Had to be extra nice2",
+          startingYearJob: "2022",
+          endingYearJob: "2025",
+        },
       ],
     };
     this.handleChange = this.handleChange.bind(this);
@@ -36,69 +40,68 @@ class Experience extends React.Component {
           {this.state.workFields.map((el, i) => {
             return (
               <div className="work-field" key={-i}>
-                <label htmlFor="companyName">Company Name:</label>
-                <input
-                  onChange={(e) => this.handleChange(i, e)}
-                  value={el.companyName || ""}
-                  id="companyName"
-                  placeholder="Your Company Name"
-                />
+                {/* group for company name */}
+                <div className="work-form-group">
+                  <label htmlFor="companyName">Company Name: </label>
+                  <input
+                    onChange={(e) => this.handleChange(i, e)}
+                    value={el.companyName || ""}
+                    id="companyName"
+                    placeholder="Your Company Name"
+                  />
+                </div>
+                {/* group for position name */}
+                <div className="work-form-group">
+                  <label htmlFor="position">Position: </label>
+                  <input
+                    onChange={(e) => this.handleChange(i, e)}
+                    value={el.position || ""}
+                    id="position"
+                    placeholder="Your Position Name"
+                  />
+                </div>
+                {/* group for job tasks */}
+                <div className="work-form-group">
+                  <label htmlFor="mainTasks">Your Main Tasks: </label>
+                  <input
+                    onChange={(e) => this.handleChange(i, e)}
+                    value={el.mainTasks || ""}
+                    id="mainTasks"
+                    placeholder="Your Main Tasks"
+                  />
+                </div>
+                {/* group for starting year*/}
+                <div className="work-form-group">
+                  <label htmlFor="startingYearJob">Starting Year: </label>
+                  <input
+                    onChange={(e) => this.handleChange(i, e)}
+                    type="date"
+                    value={el.startingYearJob || ""}
+                    id="startingYearJob"
+                    placeholder="Your Starting Year"
+                  />
+                </div>
+                {/* group for ending year*/}
+                <div className="work-form-group">
+                  <label htmlFor="endingYearJob">Ending Year: </label>
+                  <input
+                    onChange={(e) => this.handleChange(i, e)}
+                    type="date"
+                    value={el.endingYearJob || ""}
+                    id="endingYearJob"
+                    placeholder="Your Ending Year"
+                  />
+                </div>
               </div>
             );
           })}
         </fieldset>
+        <Output
+          personalInfo={this.state.personalInfo}
+          workFields={this.state.workFields}
+        />
       </>
     );
   }
-
-  //     return (
-  //       <>
-  //         <fieldset className="expInfo">
-  //           <div className="expComp">
-  //             <label htmlFor="companyName">Company Name:</label>
-  //             <input
-  //               onChange={this.handleChange}
-  //               id="companyName"
-  //               plHldr="Awesome Company"
-  //             />
-  //           </div>
-  //           <div className="expPos">
-  //             <label htmlFor="position">Position:</label>
-  //             <Input
-  //               onChange={this.handleChange}
-  //               id="position"
-  //               plHldr="Junior Developer"
-  //             />
-  //           </div>
-  //           <div className="expTasks">
-  //             <label htmlFor="mainTasks">Main Tasks:</label>
-  //             <Input
-  //               onChange={this.handleChange}
-  //               id="mainTasks"
-  //               plHldr="Had to be extra nice.."
-  //             />
-  //           </div>
-  //           <div className="expStart">
-  //             <label htmlFor="startingYearJob">Starting year:</label>
-  //             <Input
-  //               onChange={this.handleChange}
-  //               id="startingYearJob"
-  //               type="date"
-  //               plHldr="2020"
-  //             />
-  //           </div>
-  //           <div className="expEnd">
-  //             <label htmlFor="endingYearJob">Ending year:</label>
-  //             <Input
-  //               onChange={this.handleChange}
-  //               type="date"
-  //               plHldr="2025"
-  //               id="endingYearJob"
-  //             />
-  //           </div>
-  //         </fieldset>
-  //       </>
-  //     );
-  //   }
 }
 export default Experience;

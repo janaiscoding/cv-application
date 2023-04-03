@@ -1,10 +1,10 @@
 import React from "react";
 import "../utils/styles.css";
-import Output from "./Output";
+import Experience from "./Experience";
 
 class Personal extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       personalInfo: {
         firstName: "John",
@@ -50,6 +50,7 @@ class Personal extends React.Component {
       },
     });
   };
+  
   render() {
     return (
       <>
@@ -92,7 +93,7 @@ class Personal extends React.Component {
             />
           </div>
         </fieldset>
-        <Output personalInfo={this.state.personalInfo} />
+        <Experience personalInfo={this.state.personalInfo} />
       </>
     );
   }
