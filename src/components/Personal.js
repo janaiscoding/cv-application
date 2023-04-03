@@ -27,7 +27,7 @@ class Personal extends React.Component {
   };
   render() {
     return (
-      <div className="main-app">
+      <>
         <fieldset className="personal-info-fields">
           <legend>This is personal info legend</legend>
           <div className="pInfoFirst">
@@ -72,7 +72,7 @@ class Personal extends React.Component {
           </div>
         </fieldset>
         <Experience personalInfo={this.state.personalInfo} />
-      </div>
+      </>
     );
   }
 }

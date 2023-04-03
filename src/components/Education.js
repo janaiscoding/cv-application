@@ -14,8 +14,26 @@ class Education extends React.Component {
       ],
     };
     this.handleEduChange = this.handleEduChange.bind(this);
+    this.handleAddEdu = this.handleAddEdu.bind(this);
+    this.handleRemoveEdu = this.handleRemoveEdu.bind(this);
   }
-
+  handleAddEdu() {
+    this.setState({
+      educationFields: [
+        ...this.state.educationFields,
+        {
+          schoolName: "",
+          degreeTitle: "",
+          graduationDate: "",
+        },
+      ],
+    });
+  }
+  handleRemoveEdu(i) {
+    let educationFields = this.state.educationFields;
+    educationFields.splice(i, 1);
+    this.setState({ educationFields });
+  }
   handleEduChange = (i, e) => {
     let educationFields = this.state.educationFields;
     educationFields[i][e.target.id] = e.target.value;
@@ -61,9 +79,13 @@ class Education extends React.Component {
                     placeholder="YYYY"
                   />
                 </div>
+                <button onClick={() => this.handleRemoveEdu(i)}>
+                  Remove this education
+                </button>
               </div>
             );
           })}
+          <button onClick={this.handleAddEdu}>Add</button>
         </fieldset>
         <Output
           personalInfo={this.props.personalInfo}

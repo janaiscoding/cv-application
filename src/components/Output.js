@@ -45,20 +45,20 @@ class Output extends React.Component {
           <div>Email: {this.props.personalInfo.email}</div>
           <div>Phone number: {this.props.personalInfo.phoneNumber}</div>
         </div>
-        {/* container with all the job info to display */}
+        {/* container with all the job info to display
         <div className="work-info-container">
           {this.props.workFields.length > 0 ? <h3>Work Experience</h3> : ""}
           <div className="work-container-items">
             {this.renderWork(this.props.workFields)}
           </div>
         </div>
-        {/* container with all the education info to display */}
+        {/* container with all the education info to display 
         <div className="education-info-container">
           {this.props.educationFields.length > 0 ? <h3>Education</h3> : ""}
           <div className="education-container-items">
             {this.renderEducation(this.props.educationFields)}
           </div>
-        </div>
+        </div> */}  
       </div>
     );
   }
