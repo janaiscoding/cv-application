@@ -1,4 +1,5 @@
 import React from "react";
+import Experience from "./Experience";
 // import Buttons from "./Buttons";
 // import Education from "./Education";
 // import Experience from "./Experience";
@@ -12,6 +13,7 @@ class App extends React.Component {
         <form>
           <legend>Enter Your CV Information:</legend>
           <Personal />
+          <Experience />
         </form>
       </>
     );

@@ -54,6 +54,7 @@ class Personal extends React.Component {
     return (
       <>
         <fieldset className="pInfo">
+        <legend>This is personal info legend</legend>
           <div className="pInfoFirst">
             <label htmlFor="firstName">First Name </label>
             <input
