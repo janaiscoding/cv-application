@@ -25,8 +25,6 @@ class Personal extends React.Component {
     });
   };
   render() {
-    console.log(this.state.personalInfo);
-
     return (
       <>
         <fieldset className="pInfo">
