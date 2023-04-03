@@ -4,35 +4,38 @@ import Output from "./Output";
 
 class Experience extends React.Component {
   constructor(props) {
-    const { personalInfo } = props;
     super(props);
+    console.log(this.props);
     this.state = {
-      personalInfo,
       workFields: [
         {
           companyName: "Awesome Company",
           position: "Junior Developer",
           mainTasks: "Had to be extra nice",
-          startingYearJob: "2021",
-          endingYearJob: "2022",
+          startingYearJob: "2021-01-01",
+          endingYearJob: "2022-01-01",
         },
         {
           companyName: "Awesome Company2",
           position: "Junior Developer2",
           mainTasks: "Had to be extra nice2",
-          startingYearJob: "2022",
-          endingYearJob: "2025",
+          startingYearJob: "2022-01-01",
+          endingYearJob: "2025-01-01",
         },
       ],
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleWorkChange = this.handleWorkChange.bind(this);
   }
-  handleChange = (i, e) => {
+
+  handleWorkChange = (i, e) => {
     let workFields = this.state.workFields;
     workFields[i][e.target.id] = e.target.value;
     this.setState({ workFields });
   };
+
   render() {
+    console.log(this.props);
+    console.log(this.state);
     return (
       <>
         <fieldset>
@@ -44,7 +47,7 @@ class Experience extends React.Component {
                 <div className="work-form-group">
                   <label htmlFor="companyName">Company Name: </label>
                   <input
-                    onChange={(e) => this.handleChange(i, e)}
+                    onChange={(e) => this.handleWorkChange(i, e)}
                     value={el.companyName || ""}
                     id="companyName"
                     placeholder="Your Company Name"
@@ -54,7 +57,7 @@ class Experience extends React.Component {
                 <div className="work-form-group">
                   <label htmlFor="position">Position: </label>
                   <input
-                    onChange={(e) => this.handleChange(i, e)}
+                    onChange={(e) => this.handleWorkChange(i, e)}
                     value={el.position || ""}
                     id="position"
                     placeholder="Your Position Name"
@@ -64,7 +67,7 @@ class Experience extends React.Component {
                 <div className="work-form-group">
                   <label htmlFor="mainTasks">Your Main Tasks: </label>
                   <input
-                    onChange={(e) => this.handleChange(i, e)}
+                    onChange={(e) => this.handleWorkChange(i, e)}
                     value={el.mainTasks || ""}
                     id="mainTasks"
                     placeholder="Your Main Tasks"
@@ -74,7 +77,7 @@ class Experience extends React.Component {
                 <div className="work-form-group">
                   <label htmlFor="startingYearJob">Starting Year: </label>
                   <input
-                    onChange={(e) => this.handleChange(i, e)}
+                    onChange={(e) => this.handleWorkChange(i, e)}
                     type="date"
                     value={el.startingYearJob || ""}
                     id="startingYearJob"
@@ -85,7 +88,7 @@ class Experience extends React.Component {
                 <div className="work-form-group">
                   <label htmlFor="endingYearJob">Ending Year: </label>
                   <input
-                    onChange={(e) => this.handleChange(i, e)}
+                    onChange={(e) => this.handleWorkChange(i, e)}
                     type="date"
                     value={el.endingYearJob || ""}
                     id="endingYearJob"
@@ -97,7 +100,7 @@ class Experience extends React.Component {
           })}
         </fieldset>
         <Output
-          personalInfo={this.state.personalInfo}
+          personalInfo={this.props.personalInfo}
           workFields={this.state.workFields}
         />
       </>

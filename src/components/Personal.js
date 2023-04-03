@@ -13,54 +13,30 @@ class Personal extends React.Component {
         phoneNumber: "0744 286 175",
       },
     };
-    this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
-    this.handleChangeLastName = this.handleChangeLastName.bind(this);
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    this.handleChangePhone = this.handleChangePhone.bind(this);
+    this.handleChangePersonal = this.handleChangePersonal.bind(this);
   }
-  handleChangeFirstName = (e) => {
+
+  handleChangePersonal = (e) => {
     this.setState({
       personalInfo: {
         ...this.state.personalInfo,
-        firstName: e.target.value,
+        [e.target.id]: e.target.value,
       },
     });
   };
-  handleChangeLastName = (e) => {
-    this.setState({
-      personalInfo: {
-        ...this.state.personalInfo,
-        lastName: e.target.value,
-      },
-    });
-  };
-  handleChangeEmail = (e) => {
-    this.setState({
-      personalInfo: {
-        ...this.state.personalInfo,
-        email: e.target.value,
-      },
-    });
-  };
-  handleChangePhone = (e) => {
-    this.setState({
-      personalInfo: {
-        ...this.state.personalInfo,
-        phoneNumber: e.target.value,
-      },
-    });
-  };
-  
   render() {
+    console.log(this.state.personalInfo);
+
     return (
       <>
         <fieldset className="pInfo">
-        <legend>This is personal info legend</legend>
+          <legend>This is personal info legend</legend>
           <div className="pInfoFirst">
             <label htmlFor="firstName">First Name </label>
             <input
+              id="firstName"
               value={this.state.personalInfo.firstName}
-              onChange={this.handleChangeFirstName}
+              onChange={this.handleChangePersonal}
               placeholder="John"
               required={true}
             />
@@ -68,8 +44,9 @@ class Personal extends React.Component {
           <div className="pInfoLast">
             <label htmlFor="lastName">Last Name </label>
             <input
+              id="lastName"
               value={this.state.personalInfo.lastName}
-              onChange={this.handleChangeLastName}
+              onChange={this.handleChangePersonal}
               placeholder="Doe"
               required={true}
             />
@@ -77,8 +54,9 @@ class Personal extends React.Component {
           <div className="pInfoEmail">
             <label htmlFor="email">Email </label>
             <input
-              value={this.state.personalInfo.email  }
-              onChange={this.handleChangeEmail}
+              id="email"
+              value={this.state.personalInfo.email}
+              onChange={this.handleChangePersonal}
               placeholder="meow.meow@cats.meow"
               required={true}
             />
@@ -86,7 +64,8 @@ class Personal extends React.Component {
           <div className="pInfoPhone">
             <label htmlFor="phone">Phone Number </label>
             <input
-              onChange={this.handleChangePhone}
+              id="phone"
+              onChange={this.handleChangePersonal}
               type="number"
               placeholder="phone nr#"
               required={true}

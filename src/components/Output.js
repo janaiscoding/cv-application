@@ -1,14 +1,23 @@
 import React from "react";
+import "../utils/output.css";
 
 class Output extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ...props,
+    };
+  }
+
   render() {
-    console.log(this.props);
     return (
       <>
-        <div>{this.props.personalInfo.firstName}</div>
-        <div>{this.props.personalInfo.lastName}</div>
-        <div>{this.props.personalInfo.email}</div>
-        <div>{this.props.personalInfo.phoneNumber}</div>
+        <div className="output-personal-info">
+          <div>First Name: {this.props.personalInfo.firstName}</div>
+          <div>Last Name: {this.props.personalInfo.lastName}</div>
+          <div>Email: {this.props.personalInfo.email}</div>
+          <div>Phone number: {this.props.personalInfo.phoneNumber}</div>
+        </div>
       </>
     );
   }
