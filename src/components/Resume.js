@@ -8,13 +8,13 @@ class Resume extends React.Component {
       personalInfo: {
         firstName: "John",
         lastName: "Doe",
-        email: "john.creates@gmail.com",
-        phoneNumber: "0744 286 175",
+        email: "john.doe@fake.mail",
+        phoneNumber: "0123 456 789",
       },
       educationFields: [
         {
-          schoolName: "college of being awesome",
-          degreeTitle: "bachelor's degree",
+          schoolName: "Engineering",
+          degreeTitle: "Bachelor's Degree",
           graduationDate: "2020",
         },
       ],
@@ -22,16 +22,9 @@ class Resume extends React.Component {
         {
           companyName: "Awesome Company",
           position: "Junior Developer",
-          mainTasks: "Had to be extra nice",
+          mainTasks: "Creating beautiful responsive websites",
           startingYearJob: "2021",
           endingYearJob: "2022",
-        },
-        {
-          companyName: "Awesome Company2",
-          position: "Junior Developer2",
-          mainTasks: "Had to be extra nice2",
-          startingYearJob: "2022",
-          endingYearJob: "2025",
         },
       ],
     };
@@ -143,7 +136,7 @@ class Resume extends React.Component {
                 id="phoneNumber"
                 onChange={this.handleChangePersonal}
                 type="number"
-                placeholder="phone nr#"
+                placeholder="0123 456 789"
                 required={true}
               />
             </div>
@@ -206,7 +199,7 @@ class Resume extends React.Component {
                     />
                   </div>
                   <button onClick={() => this.handleRemoveWork(i)}>
-                    Remove this job
+                    Delete
                   </button>
                 </div>
               );
@@ -250,7 +243,7 @@ class Resume extends React.Component {
                     />
                   </div>
                   <button onClick={() => this.handleRemoveEdu(i)}>
-                    Remove this education
+                    Delete
                   </button>
                 </div>
               );

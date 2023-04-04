@@ -23,13 +23,7 @@ class Output extends React.Component {
       );
     });
   }
-  renderEducation(educationFields) {
-    if (!Array.isArray(educationFields) || educationFields.length === 0) {
-      console.log(this.props.personalInfo.personalInfo)
-
-      return <p>No education information available.</p>;
-    }
-  
+  renderEducation(educationFields) { 
     return educationFields.map((education) => {
       return (
         <div className="education-singular-item" key={uniqid()}>
