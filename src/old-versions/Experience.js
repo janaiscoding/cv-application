@@ -1,6 +1,5 @@
 import React from "react";
 import "../utils/experience.css";
-import Education from "./Education";
 
 class Experience extends React.Component {
   constructor(props) {
@@ -119,10 +118,6 @@ class Experience extends React.Component {
           })}
           <button onClick={this.handleAddWork}>Add</button>
         </fieldset>
-        <Education
-          personalInfo={this.props.personalInfo}
-          workFields={this.state.workFields}
-        />
       </>
     );
   }

@@ -1,5 +1,5 @@
 import React from "react";
-import Output from "./Output";
+
 
 class Education extends React.Component {
   constructor(props) {
@@ -87,11 +87,6 @@ class Education extends React.Component {
           })}
           <button onClick={this.handleAddEdu}>Add</button>
         </fieldset>
-        <Output
-          personalInfo={this.props.personalInfo}
-          workFields={this.props.workFields}
-          educationFields={this.state.educationFields}
-        />
       </>
     );
   }

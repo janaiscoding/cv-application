@@ -24,6 +24,12 @@ class Output extends React.Component {
     });
   }
   renderEducation(educationFields) {
+    if (!Array.isArray(educationFields) || educationFields.length === 0) {
+      console.log(this.props.personalInfo.personalInfo)
+
+      return <p>No education information available.</p>;
+    }
+  
     return educationFields.map((education) => {
       return (
         <div className="education-singular-item" key={uniqid()}>
@@ -67,4 +73,3 @@ class Output extends React.Component {
 
 export default Output;
 
-// the class i want to use to render everything as i am typing maybe ?
