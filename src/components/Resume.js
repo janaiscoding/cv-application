@@ -1,5 +1,4 @@
 import React from "react";
-import "../utils/styles.css";
 import Output from "./Output";
 
 class Resume extends React.Component {
@@ -104,7 +103,7 @@ class Resume extends React.Component {
   }
   render() {
     return (
-      <>
+      <div className="main">
         <div className="resume">
           <fieldset className="personal-info-fields">
             <legend>This is personal info legend</legend>
@@ -264,7 +263,7 @@ class Resume extends React.Component {
           educationFields={this.state.educationFields}
           workFields={this.state.workFields}
         />
-      </>
+      </div>
     );
   }
 }
