@@ -140,7 +140,7 @@ class Resume extends React.Component {
             <div className="pInfoPhone">
               <label htmlFor="phone">Phone Number </label>
               <input
-                id="phone"
+                id="phoneNumber"
                 onChange={this.handleChangePersonal}
                 type="number"
                 placeholder="phone nr#"

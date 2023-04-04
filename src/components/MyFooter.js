@@ -8,7 +8,7 @@ class MyFooter extends React.Component {
         <footer className="footer">
           <a
             href="https://github.com/janaiscoding"
-            class="footer-link"
+            className="footer-link"
             rel="noopener noreferrer"
           >
             ©JanaIsCoding

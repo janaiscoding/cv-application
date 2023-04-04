@@ -8,10 +8,19 @@
 .main{
   display: flex;
   height: 85vh;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 100px;
 }
-
+.resume,
+.output-screen{
+  padding-top: 100px;
+}
+.personal-info-fields,
+.experience-info-fields,
+.education-info-fields{
+  padding: 10px;
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
