@@ -4,7 +4,6 @@ const Education = () => {
   const [schoolName, setSchoolName] = useState("");
   const [degreeTitle, setDegreeTitle] = useState("");
   const [graduationDate, setGraduationDate] = useState("");
-
   return (
     <>
       <fieldset className="education">

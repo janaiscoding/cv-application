@@ -11,6 +11,7 @@ const Resume = () => {
         <Experience />
         <button>Add</button>
         <Education />
+        <Education />
         <button>Add</button>
       </div>
     </>
