@@ -24,12 +24,23 @@ const EducationItem = ({ id, educationItem, onChange }) => {
             placeholder="Degree Title"
           />
         </label>
-        {/* separate input field visually : GRADUATION YEAR */}
+        {/* separate input field visually : START YEAR */}
         <label>
-          Graduation Year
+          To
           <input
-            name="graduation"
-            value={educationItem.graduation}
+            name="to"
+            value={educationItem.to}
+            onChange={(e) => onChange(e, id)}
+            placeholder="YYYY"
+            type="number"
+          />
+        </label>
+        {/* separate input field visually : END YEAR */}
+        <label>
+          From
+          <input
+            name="from"
+            value={educationItem.from}
             onChange={(e) => onChange(e, id)}
             placeholder="YYYY"
             type="number"

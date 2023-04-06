@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emptyCV from "./emptyCV";
-import Resume from "./Resume";
+import Resume from "../components/Resume";
 
 const Main = () => {
   const [cv, setCv] = useState(emptyCV);
