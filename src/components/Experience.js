@@ -8,15 +8,13 @@ const Experience = ({ experience, onChange, onAdd, onDelete }) => {
       id={experienceItem.id}
       experienceItem={experienceItem}
       onChange={onChange}
-      onAdd={onAdd}
       onDelete={onDelete}
     />
   ));
-  return (
-    <>
-      <div>{experienceItems}</div>
-    </>
-  );
+  return <>
+  {experienceItems}
+  <button onClick={onAdd}>Add Experience</button>
+  </>;
 };
 
 export default Experience;

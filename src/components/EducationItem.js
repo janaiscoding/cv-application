@@ -2,9 +2,8 @@ import React from "react";
 
 const EducationItem = ({ id, educationItem, onChange, onAdd, onDelete }) => {
   return (
-    <>
-      <div>Hello world</div>
-      <fieldset className="education">
+    <div className="education">
+      <fieldset>
         <label>
           School Name
           <input
@@ -43,10 +42,9 @@ const EducationItem = ({ id, educationItem, onChange, onAdd, onDelete }) => {
             type="number"
           />
         </label>
-        <button onClick={onAdd}>Add</button>
         <button onClick={() => onDelete(id)}>Delete</button>
       </fieldset>
-    </>
+    </div>
   );
 };
 

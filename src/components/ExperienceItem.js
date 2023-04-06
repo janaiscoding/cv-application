@@ -2,8 +2,8 @@ import React from "react";
 
 const ExperienceItem = ({ id, experienceItem, onChange, onAdd, onDelete }) => {
   return (
-    <>
-      <fieldset className="experience">
+    <div className="experience">
+      <fieldset>
         {/* separate input field visually : POSITION  */}
         <label>
           Position
@@ -56,10 +56,9 @@ const ExperienceItem = ({ id, experienceItem, onChange, onAdd, onDelete }) => {
             type="number"
           />
         </label>
-        <button onClick={onAdd}>Add</button>
         <button onClick={() => onDelete(id)}>Delete</button>
       </fieldset>
-    </>
+    </div>
   );
 };
 

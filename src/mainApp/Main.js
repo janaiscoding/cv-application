@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emptyCV from "./emptyCV";
-import Resume from "../components/Resume";
+import Resume from "./Resume";
 import uniqid from "uniqid";
 
 const Main = () => {
