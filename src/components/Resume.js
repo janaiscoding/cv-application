@@ -1,18 +1,11 @@
 import React from "react";
 import Personal from "./Personal";
-import Experience from "./Experience";
-import Education from "./Education";
 
-const Resume = () => {
+const Resume = ({ cv, onChangePersonal }) => {
   return (
     <>
       <div className="main">
-        <Personal />
-        <Experience />
-        <button>Add</button>
-        <Education />
-        <Education />
-        <button>Add</button>
+        <Personal personalInfo={cv.personalInfo} onChange={onChangePersonal} />
       </div>
     </>
   );

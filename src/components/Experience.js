@@ -65,17 +65,6 @@ const Experience = () => {
           />
         </label>
       </fieldset>
-      {companyName && position && mainTasks && startYear && endYear !== "" && (
-        <div className="output">
-          <p>
-            You were a {position} at {companyName} and your main tasks were{" "}
-            {mainTasks}.
-          </p>
-          <p>
-            Your duration there was {startYear} - {endYear}
-          </p>
-        </div>
-      )}
     </>
   );
 };

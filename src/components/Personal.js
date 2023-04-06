@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "../utils/output.css";
 
-const Personal = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-
+const Personal = ({ personalInfo, onChange }) => {
   return (
     <>
       <fieldset className="personal">
@@ -14,53 +9,44 @@ const Personal = () => {
         <label>
           First Name
           <input
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            value={personalInfo.firstName}
+            name="firstName"
+            onChange={(e) => onChange(e)}
             placeholder="First Name"
-            required={true}
           />
         </label>
         {/* separate input field visually : LAST NAME  */}
         <label>
           Last Name
           <input
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            value={personalInfo.lastName}
+            name="lastName"
+            onChange={(e) => onChange(e)}
             placeholder="Last Name"
-            required={true}
           />
         </label>
         {/* separate input field visually : EMAIL  */}
         <label>
           Email
           <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={personalInfo.email}
+            name="email"
+            onChange={(e) => onChange(e)}
             placeholder="john.doe@fake.mail"
-            required={true}
           />
         </label>
         {/* separate input field visually : PHONE NUMBER  */}
         <label>
           Phone Number
           <input
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
+            value={personalInfo.phoneNumber}
+            name="phoneNumber"
+            onChange={(e) => onChange(e)}
             placeholder="0123 456 789"
             type="number"
-            required={true}
           />
         </label>
       </fieldset>
-      {(firstName && lastName && email && phoneNumber) !== "" && (
-        <div className="output">
-          <p>
-            Your name is {firstName} {lastName}.
-          </p>
-          <p>Your e-mail is {email}</p>
-          <p>Your phone number is {phoneNumber}</p>
-        </div>
-      )}
     </>
   );
 };

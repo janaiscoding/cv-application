@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import "uniqid";
 
-const Education = () => {
+const Education = ({ onDelete }) => {
   const [schoolName, setSchoolName] = useState("");
   const [degreeTitle, setDegreeTitle] = useState("");
   const [graduationDate, setGraduationDate] = useState("");
+
   return (
     <>
       <fieldset className="education">
@@ -39,15 +41,8 @@ const Education = () => {
             required={true}
           />
         </label>
+        <button onClick={onDelete}>Delete</button>
       </fieldset>
-      {schoolName && degreeTitle && graduationDate !== "" && (
-        <div className="output">
-          <p>
-            You studied at {schoolName} for the {degreeTitle} and you graduated
-            in the year of {graduationDate}.
-          </p>
-        </div>
-      )}
     </>
   );
 };
