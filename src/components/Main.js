@@ -33,11 +33,25 @@ const Main = () => {
       return { ...prevState, experience: [...newExperience] };
     });
   };
+
+  const handleChangeEducation = (e, id) => {
+    setCv((prevState) => {
+      const newEducation = prevState.education.map((educationItem) => {
+        if (educationItem.id === id) {
+          return { ...educationItem, [e.target.name]: e.target.value };
+        }
+        return educationItem;
+      });
+      return { ...prevState, education: [...newEducation] };
+    });
+  };
+
   return (
     <Resume
       cv={cv}
       onChangePersonal={handlePersonalChange}
       onChangeExperience={handleExperienceChange}
+      onChangeEducation={handleChangeEducation}
     />
   );
 };

@@ -22,7 +22,7 @@ const emptyCV = {
       id: uniqid(),
       school: "",
       degree: "",
-      year: "",
+      graduation: "",
     },
   ],
 };

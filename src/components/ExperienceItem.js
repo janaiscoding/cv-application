@@ -1,7 +1,6 @@
 import React from "react";
 
 const ExperienceItem = ({ id, experienceItem, onChange }) => {
-  console.log(experienceItem);
   return (
     <>
       <fieldset className="experience">
