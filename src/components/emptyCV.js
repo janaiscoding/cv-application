@@ -12,7 +12,9 @@ const emptyCV = {
       id: uniqid(),
       position: "",
       company: "",
-      year: "",
+      tasks: "",
+      to: "",
+      from: "",
     },
   ],
   education: [
