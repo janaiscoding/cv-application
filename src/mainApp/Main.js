@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import emptyCV from "./emptyCV";
 import Resume from "../components/Resume";
+import uniqid from "uniqid";
 
 const Main = () => {
   const [cv, setCv] = useState(emptyCV);

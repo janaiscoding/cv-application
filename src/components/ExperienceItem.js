@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExperienceItem = ({ id, experienceItem, onChange }) => {
+const ExperienceItem = ({ id, experienceItem, onChange, onAdd }) => {
   return (
     <>
       <fieldset className="experience">
@@ -56,6 +56,7 @@ const ExperienceItem = ({ id, experienceItem, onChange }) => {
             type="number"
           />
         </label>
+        <button onClick={onAdd}>Add</button>
       </fieldset>
     </>
   );

@@ -1,10 +1,10 @@
 import React from "react";
 
-const EducationItem = ({ id, educationItem, onChange }) => {
+const EducationItem = ({ id, educationItem, onChange, onAdd }) => {
   return (
     <>
+      <div>Hello world</div>
       <fieldset className="education">
-        {/* separate input field visually : SCHOOL NAME  */}
         <label>
           School Name
           <input
@@ -14,7 +14,6 @@ const EducationItem = ({ id, educationItem, onChange }) => {
             placeholder="School Name"
           />
         </label>
-        {/* separate input field visually : DEGREE TITLE  */}
         <label>
           Degree Title
           <input
@@ -24,7 +23,6 @@ const EducationItem = ({ id, educationItem, onChange }) => {
             placeholder="Degree Title"
           />
         </label>
-        {/* separate input field visually : START YEAR */}
         <label>
           To
           <input
@@ -35,7 +33,6 @@ const EducationItem = ({ id, educationItem, onChange }) => {
             type="number"
           />
         </label>
-        {/* separate input field visually : END YEAR */}
         <label>
           From
           <input
@@ -46,6 +43,7 @@ const EducationItem = ({ id, educationItem, onChange }) => {
             type="number"
           />
         </label>
+        <button onClick={onAdd}>Add</button>
       </fieldset>
     </>
   );
