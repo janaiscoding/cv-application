@@ -1,7 +1,7 @@
 import React from "react";
 import ExperienceItem from "./ExperienceItem";
 
-const Experience = ({ experience, onChange, onAdd }) => {
+const Experience = ({ experience, onChange, onAdd, onDelete }) => {
   const experienceItems = experience.map((experienceItem) => (
     <ExperienceItem
       key={experienceItem.id}
@@ -9,6 +9,7 @@ const Experience = ({ experience, onChange, onAdd }) => {
       experienceItem={experienceItem}
       onChange={onChange}
       onAdd={onAdd}
+      onDelete={onDelete}
     />
   ));
   return (

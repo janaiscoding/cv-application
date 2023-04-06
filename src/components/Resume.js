@@ -10,11 +10,18 @@ const Resume = ({
   onChangeEducation,
   onAddEducation,
   onDeleteEducation,
+  onAddExperience,
+  onDeleteExperience,
 }) => {
   return (
     <div className="main">
       <Personal personalInfo={cv.personalInfo} onChange={onChangePersonal} />
-      <Experience experience={cv.experience} onChange={onChangeExperience} />
+      <Experience
+        experience={cv.experience}
+        onChange={onChangeExperience}
+        onAdd={onAddExperience}
+        onDelete={onDeleteExperience}
+      />
       <Education
         education={cv.education}
         onChange={onChangeEducation}

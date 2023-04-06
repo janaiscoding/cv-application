@@ -71,7 +71,32 @@ const Main = () => {
       return { ...prevState, education: [...newEducation] };
     });
   };
-
+  const handleAddExperience = () => {
+    setCv((prevState) => {
+      return {
+        ...prevState,
+        experience: [
+          ...prevState.experience,
+          {
+            id: uniqid(),
+            position: "",
+            company: "",
+            tasks: "",
+            to: "",
+            from: "",
+          },
+        ],
+      };
+    });
+  };
+  const handleDeleteExperience = (id) => {
+    setCv((prevState) => {
+      const newExperience = prevState.experience.filter(
+        (experienceItem) => experienceItem.id !== id
+      );
+      return { ...prevState, experience: [...newExperience] };
+    });
+  };
   return (
     <Resume
       cv={cv}
@@ -80,6 +105,8 @@ const Main = () => {
       onChangeEducation={handleChangeEducation}
       onAddEducation={handleAddEducation}
       onDeleteEducation={handleDeleteEducation}
+      onAddExperience={handleAddExperience}
+      onDeleteExperience={handleDeleteExperience}
     />
   );
 };
