@@ -46,6 +46,31 @@ const Main = () => {
       return { ...prevState, education: [...newEducation] };
     });
   };
+  const handleAddEducation = () => {
+    setCv((prevState) => {
+      return {
+        ...prevState,
+        education: [
+          ...prevState.education,
+          {
+            id: uniqid(),
+            school: "",
+            degree: "",
+            to: "",
+            from: "",
+          },
+        ],
+      };
+    });
+  };
+  const handleDeleteEducation = (id) => {
+    setCv((prevState) => {
+      const newEducation = prevState.education.filter(
+        (educationItem) => educationItem.id !== id
+      );
+      return { ...prevState, education: [...newEducation] };
+    });
+  };
 
   return (
     <Resume
@@ -53,6 +78,8 @@ const Main = () => {
       onChangePersonal={handlePersonalChange}
       onChangeExperience={handleExperienceChange}
       onChangeEducation={handleChangeEducation}
+      onAddEducation={handleAddEducation}
+      onDeleteEducation={handleDeleteEducation}
     />
   );
 };

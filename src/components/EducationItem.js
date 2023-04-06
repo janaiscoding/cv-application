@@ -1,6 +1,6 @@
 import React from "react";
 
-const EducationItem = ({ id, educationItem, onChange, onAdd }) => {
+const EducationItem = ({ id, educationItem, onChange, onAdd, onDelete }) => {
   return (
     <>
       <div>Hello world</div>
@@ -44,6 +44,7 @@ const EducationItem = ({ id, educationItem, onChange, onAdd }) => {
           />
         </label>
         <button onClick={onAdd}>Add</button>
+        <button onClick={() => onDelete(id)}>Delete</button>
       </fieldset>
     </>
   );
