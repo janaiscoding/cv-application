@@ -1,5 +1,4 @@
 import React from "react";
-import "../utils/output.css";
 import uniqid from "uniqid";
 
 class Output extends React.Component {
@@ -41,8 +40,7 @@ class Output extends React.Component {
         {/* container with all the personal info to display */}
         <div className="personal-info-container">
           <h3>Personal Information</h3>
-          <div>First Name: {this.props.personalInfo.firstName}</div>
-          <div>Last Name: {this.props.personalInfo.lastName}</div>
+          <div> {this.props.personalInfo.firstName}{this.props.personalInfo.lastName}</div>
           <div>Email: {this.props.personalInfo.email}</div>
           <div>Phone number: {this.props.personalInfo.phoneNumber}</div>
         </div>

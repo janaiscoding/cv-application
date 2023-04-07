@@ -2,19 +2,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary-focus);
+  background-color: #ede7dc;
   height: 10vh;
   padding: 0px 100px;
   -webkit-box-shadow: 0px 5px 17px -6px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 5px 17px -6px rgba(0, 0, 0, 0.54);
 }
 .logo {
-  color: var(--font-color);
+  color: #260707;
   font-size: 2rem;
   font-weight: 500;
 }
 .social-link {
-  color: var(--font-color);
+  color: #260707;
   font-size: 1.3rem;
 }
 a,

@@ -13,8 +13,11 @@ const Experience = ({ experience, onChange, onAdd, onDelete }) => {
   ));
   return (
     <>
+      <div className="title-wrapper">
+        <div className="title">Your Experience</div>
+        <div className="add" onClick={onAdd}>Add</div>
+      </div>
       <div className="experience">{experienceItems}</div>
-      <button onClick={onAdd}>Add Experience</button>
     </>
   );
 };

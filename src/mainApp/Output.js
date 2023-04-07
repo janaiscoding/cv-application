@@ -1,6 +1,5 @@
 import React from "react";
-// here i gotta map the arrays
-// also create the whole layout
+
 class Output extends React.Component {
   constructor(props) {
     super(props);
@@ -10,10 +9,12 @@ class Output extends React.Component {
   renderExperience(experience) {
     return experience.map((experienceItem) => {
       return (
-        <div className="work-singular-item" key={experienceItem.id}>
-          <p className="company-name">{experienceItem.company}</p>
-          <p className="work-position">{experienceItem.position}</p>
-          <p className="main-tasks">{experienceItem.tasks}</p>
+        <div className="experience-wrap" key={experienceItem.id}>
+          <p className="company">{experienceItem.company}</p>
+          <p className="position">Position</p>
+          <p>{experienceItem.position}</p>
+          <p className="tasks">Tasks</p>
+          <p>{experienceItem.tasks}</p>
           <p className="date">
             {experienceItem.to} - {experienceItem.from}{" "}
           </p>
@@ -24,9 +25,9 @@ class Output extends React.Component {
   renderEducation(education) {
     return education.map((educationItem) => {
       return (
-        <div className="education-singular-item" key={educationItem.id}>
-          <p className="school-name">{educationItem.school}</p>
-          <p className="degree-title">{educationItem.degree}</p>
+        <div className="education-wrap" key={educationItem.id}>
+          <p className="school">{educationItem.school}</p>
+          <p className="degree">{educationItem.degree}</p>
           <p className="date">
             {educationItem.to} -{educationItem.from}{" "}
           </p>
@@ -37,27 +38,29 @@ class Output extends React.Component {
   render() {
     return (
       <div className="output-screen">
+        <div className="title title-wrapper"> Personal CV </div>
         {/* container with all the personal info to display */}
-        <div className="personal-info-container">
-          <h3>Personal Information</h3>
-          <div>First Name: {this.props.personalInfo.firstName}</div>
-          <div>Last Name: {this.props.personalInfo.lastName}</div>
-          <div>Email: {this.props.personalInfo.email}</div>
-          <div>Phone number: {this.props.personalInfo.phoneNumber}</div>
+        <div className="output-personal">
+          <div className="personal-wrap">
+            <div className="name">
+              {this.props.personalInfo.firstName}{" "}
+              {this.props.personalInfo.lastName}
+            </div>
+            <div className="email">Email: {this.props.personalInfo.email}</div>
+            <div className="phone-number">
+              Phone Number: {this.props.personalInfo.phoneNumber}
+            </div>
+          </div>
         </div>
         {/* container with all the job info to display */}
-        <div className="work-info-container">
-          {this.props.experience.length > 0 ? <h3>Work Experience</h3> : ""}
-          <div className="work-container-items">
-            {this.renderExperience(this.props.experience)}
-          </div>
+        <div className="title title-wrapper">Experience</div>
+        <div className="output-experience">
+          {this.renderExperience(this.props.experience)}
         </div>
         {/* container with all the education info to display */}
-        <div className="education-info-container">
-          {this.props.education.length > 0 ? <h3>Education</h3> : ""}
-          <div className="education-container-items">
-            {this.renderEducation(this.props.education)}
-          </div>
+        <div className="title title-wrapper">Education</div>
+        <div className="output-education">
+          {this.renderEducation(this.props.education)}
         </div>
       </div>
     );

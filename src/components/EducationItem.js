@@ -14,7 +14,7 @@ const EducationItem = ({ id, educationItem, onChange, onAdd, onDelete }) => {
           />
         </label>
         <label>
-          Degree Title
+          Degree
           <input
             name="degree"
             value={educationItem.degree}
@@ -22,27 +22,25 @@ const EducationItem = ({ id, educationItem, onChange, onAdd, onDelete }) => {
             placeholder="Degree Title"
           />
         </label>
-        <label>
-          To
+        <label className="duration">
           <input
             name="to"
             value={educationItem.to}
             onChange={(e) => onChange(e, id)}
-            placeholder="YYYY"
+            placeholder="to"
             type="number"
           />
-        </label>
-        <label>
-          From
           <input
             name="from"
             value={educationItem.from}
             onChange={(e) => onChange(e, id)}
-            placeholder="YYYY"
+            placeholder="from"
             type="number"
           />
         </label>
-        <button onClick={() => onDelete(id)}>Delete</button>
+        <div className="delete" onClick={() => onDelete(id)}>
+          Delete
+        </div>
       </fieldset>
     </>
   );

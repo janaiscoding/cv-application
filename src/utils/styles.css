@@ -4,65 +4,156 @@
   margin: 0;
   padding: 0;
 }
-
+@font-face {
+  font-family: "Inder";
+  src: local("Inder"),
+  url("/src/utils/Inder/Inder-Regular.ttf");
+}
 .main {
+  font-family: "Inder";
+  background-color: rgba(228, 224, 220, 0.434);
   display: flex;
-  height: 85vh;
-  align-self: flex-start;
   justify-content: center;
   padding: 20px 100px;
   overflow: auto;
+  gap: 20px;
+  font-style: italic;
+  font-size: 16px;
+  color: #260707;
 }
 .output-screen,
 .main-form {
   width: 50%;
 }
-.personal{
-  display: flex;
-  justify-content: flex-end;
+.main-form {
+  justify-content: space-between;
 }
-.experience,
-.education {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+
+.output-screen,
+.main-form {
+  background-color: #ede7dc;
   border: 1px solid black;
-}
-.personal > fieldset > label,
-.experience > fieldset > label,
-.education > fieldset > label {
   display: flex;
   flex-direction: column;
-  align-items: self-end;
+  padding: 20px;
+  border-radius: 5px;
 }
-.experience > fieldset> label > input,
-.experience > fieldset> label > textarea,
-.education > fieldset> label > input,
-.education > fieldset> label > textarea
- {
-  width: 250px;
+.title {
   text-align: right;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.title-wrapper {
+  border-bottom: 2px solid rgb(138, 90, 90);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 10px;
+}
+.main-form > button {
+  width: min-content;
+}
+
+.experience,
+.education,
+.personal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.output-experience,
+.output-education,
+.output-personal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.experience-wrap,
+.education-wrap {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  width: 200px;
+  word-wrap: break-word;
+}
+.personal-wrap {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+.position,
+.tasks {
+  font-size: 18px;
+}
+.name,
+.company,
+.school {
+  font-size: 20px;
+}
+
+.personal > fieldset > label,
+.experience > fieldset > label > :not(.duration),
+.education > fieldset > label > :not(.duration) {
+  display: flex;
+  flex-direction: column;
+}
+.experience > fieldset > label > input,
+.experience > fieldset > label > textarea,
+.education > fieldset > label > input >,
+.education > fieldset > label > textarea,
+.personal > fieldset > label > input {
+  width: 200px;
+}
+
+fieldset > .duration {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 5px;
+}
+.duration > input {
+  width: 40px;
 }
 .experience > fieldset,
 .personal > fieldset,
 .education > fieldset {
   border: 0;
+  border-radius: 5px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-self: center;
   align-items: self-end;
-  gap: 5px;
-  background-color: bisque;
+  margin: 5px;
+  border: 1px solid #c1b4b4;
+}
+input,
+textarea {
+  border: 0;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 5px 0px;
+  color: #260707;
 }
 .experience > button,
 .education > button {
   place-self: center;
 }
-.main-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+.add:hover,
+.delete:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.add,
+.delete {
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

@@ -13,8 +13,13 @@ const Education = ({ education, onChange, onAdd, onDelete }) => {
   ));
   return (
     <>
+      <div className="title-wrapper">
+        <div className="title">Your Education</div>
+        <div className="add" onClick={onAdd}>
+          Add
+        </div>
+      </div>
       <div className="education">{educationItems}</div>
-      <button onClick={onAdd}>Add Education</button>
     </>
   );
 };
