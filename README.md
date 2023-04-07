@@ -5,7 +5,8 @@
 - The scope of this project was to build **my first application in React using Class components**.
 - The actual practice was to understand how state and props work together, and how to create different render conditions.
 - For example, each subsection takes user input but the Experience and Education field also have Add and Remove features to render again.
-- I am postponing styling currently since I am planning to learn more about React and come back to re-make this using functional components.
+
+- Updated the app using **functional components** and **useState** instead. 
 
 ## Live Demo
 - See the full live preview [here](https://janaiscoding.github.io/cv-application/)
@@ -45,7 +46,7 @@ npm start
 
 ### Future plans for this project 
 
-- Refactor using functional components
-- Finish styling
+- Refactor using functional components ---> checked
+- Finish styling ---> semi-checked c:
 - Add pdf export package 
 - Upload the project preview to this README
