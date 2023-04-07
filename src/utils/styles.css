@@ -7,21 +7,62 @@
 
 .main {
   display: flex;
-  flex-direction: column;
   height: 85vh;
-  align-items: center;
+  align-self: flex-start;
   justify-content: center;
-  padding: 0 100px;
+  padding: 20px 100px;
+  overflow: auto;
 }
-.resume,
-.output-screen {
-  padding-top: 100px;
+.output-screen,
+.main-form {
+  width: 50%;
 }
-.personal,
+.personal{
+  display: flex;
+  justify-content: flex-end;
+}
 .experience,
 .education {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  border: 1px solid black;
+}
+.personal > fieldset > label,
+.experience > fieldset > label,
+.education > fieldset > label {
+  display: flex;
   flex-direction: column;
+  align-items: self-end;
+}
+.experience > fieldset> label > input,
+.experience > fieldset> label > textarea,
+.education > fieldset> label > input,
+.education > fieldset> label > textarea
+ {
+  width: 250px;
+  text-align: right;
+}
+.experience > fieldset,
+.personal > fieldset,
+.education > fieldset {
+  border: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: self-end;
+  gap: 5px;
+  background-color: bisque;
+}
+.experience > button,
+.education > button {
+  place-self: center;
+}
+.main-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

@@ -13,7 +13,7 @@ const Education = ({ education, onChange, onAdd, onDelete }) => {
   ));
   return (
     <>
-      {educationItems}
+      <div className="education">{educationItems}</div>
       <button onClick={onAdd}>Add Education</button>
     </>
   );

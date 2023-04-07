@@ -11,10 +11,12 @@ const Experience = ({ experience, onChange, onAdd, onDelete }) => {
       onDelete={onDelete}
     />
   ));
-  return <>
-  {experienceItems}
-  <button onClick={onAdd}>Add Experience</button>
-  </>;
+  return (
+    <>
+      <div className="experience">{experienceItems}</div>
+      <button onClick={onAdd}>Add Experience</button>
+    </>
+  );
 };
 
 export default Experience;

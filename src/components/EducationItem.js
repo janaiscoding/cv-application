@@ -2,7 +2,7 @@ import React from "react";
 
 const EducationItem = ({ id, educationItem, onChange, onAdd, onDelete }) => {
   return (
-    <div className="education">
+    <>
       <fieldset>
         <label>
           School Name
@@ -44,7 +44,7 @@ const EducationItem = ({ id, educationItem, onChange, onAdd, onDelete }) => {
         </label>
         <button onClick={() => onDelete(id)}>Delete</button>
       </fieldset>
-    </div>
+    </>
   );
 };
 

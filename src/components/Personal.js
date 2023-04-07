@@ -3,8 +3,8 @@ import "../utils/output.css";
 
 const Personal = ({ personalInfo, onChange }) => {
   return (
-    <>
-      <fieldset className="personal">
+    <div className="personal">
+      <fieldset>
         {/* separate input field visually : FIRST NAME  */}
         <label>
           First Name
@@ -47,7 +47,7 @@ const Personal = ({ personalInfo, onChange }) => {
           />
         </label>
       </fieldset>
-    </>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const ExperienceItem = ({ id, experienceItem, onChange, onAdd, onDelete }) => {
   return (
-    <div className="experience">
+    <>
       <fieldset>
         {/* separate input field visually : POSITION  */}
         <label>
@@ -27,8 +27,12 @@ const ExperienceItem = ({ id, experienceItem, onChange, onAdd, onDelete }) => {
         {/* separate input field visually : MAIN TASKS  */}
         <label>
           Main Tasks
-          <input
+          <textarea
+            rows="4"
+            cols={20}
             name="tasks"
+            id="tasks"
+            type="text"
             value={experienceItem.tasks}
             onChange={(e) => onChange(e, id)}
             placeholder="Your tasks on this job"
@@ -58,7 +62,7 @@ const ExperienceItem = ({ id, experienceItem, onChange, onAdd, onDelete }) => {
         </label>
         <button onClick={() => onDelete(id)}>Delete</button>
       </fieldset>
-    </div>
+    </>
   );
 };
 
